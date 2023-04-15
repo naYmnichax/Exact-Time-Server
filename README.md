@@ -49,5 +49,8 @@ def start_server():
                 data_from_NTP = request_time_from_NtpServer()
                 response = bytes(data_from_NTP, 'utf-8')
                 server.sendto(response, address)
+            else:
+                response = bytes('invalid request...', 'utf-8')
+                server.sendto(response, address)
 ```
 __Программу написал Матус Матвей (МЕН-210201)__
